@@ -1,6 +1,5 @@
 import opengate as gate
 from sim_helpers import *
-from vista import *
 
 
 # this first line is required at the beginning of all scripts
@@ -31,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 4
+    sim.number_of_threads = 50
 
     sim.progress_bar = True
 
@@ -127,7 +126,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -20 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 2500000
+    source.n = 200000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
