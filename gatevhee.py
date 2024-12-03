@@ -30,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 100
+    sim.number_of_threads = 50
 
     sim.progress_bar = True
 
@@ -151,8 +151,8 @@ if __name__ == "__main__":
     if source.n >=1000000:
         depth_dose = sim.add_actor("DoseActor", "dose")
         depth_dose.attached_to = "pmmacyl"
-        depth_dose.coordinate_system = "world"
         depth_dose.output_filename = "dose3d.mhd"
+        depth_dose.output_coordinate_system='global'
         depth_dose.spacing = [1 * mm, 1 * mm, 1 * mm]
         depth_dose.size = [120, 120, 300]
         depth_dose.dose.active = True
