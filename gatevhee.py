@@ -126,7 +126,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -20 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 20000000
+    source.n = 2000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
