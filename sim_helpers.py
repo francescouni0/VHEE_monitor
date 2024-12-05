@@ -54,7 +54,7 @@ def add_collimator_he(sim, head, debug):
     
     
     # parameterised holes
-    size = [1, 1, 2]
+    size = [1, 1, 30]
      #traslazione tra coppie di buchi (distanza dal centro)
     tr = [0, 10 * mm, 10 * mm, 0]
     rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()

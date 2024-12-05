@@ -30,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 8
+    sim.number_of_threads = 50
 
     sim.progress_bar = True
 
@@ -87,14 +87,14 @@ if __name__ == "__main__":
     
   
     # create detector
-    #crystal = sim.add_volume("BoxVolume", "crystal")
-    #crystal.size = [1 * cm, 3 * cm, 3 * cm]
-    #crystal.translation = [15.5 * cm, 0 * cm, 0 * cm]
-    #crystal.material = "BGO"
-    #crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
+    crystal = sim.add_volume("BoxVolume", "crystal")
+    crystal.size = [1 * cm, 3 * cm, 30 * cm]
+    crystal.translation = [15.5 * cm, 0 * cm, 0 * cm]
+    crystal.material = "BGO"
+    crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
     #CREATE COLLIMATOR
-    #colli=add_collimator_he(sim, world, False)
+    colli=add_collimator_he(sim, world, False)
 
 
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 1250000
+    source.n = 2000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
