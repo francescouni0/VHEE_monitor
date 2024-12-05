@@ -177,16 +177,16 @@ if __name__ == "__main__":
         
         
         
-    #hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
-    #hc.attached_to = crystal.name
-    #hc.output_filename = "spect.root"
-    #hc.attributes = [
-    #    "PostPosition",
-    #    "PreKineticEnergy",
-    #    "TotalEnergyDeposit",
-    #    
-#
-    #]
+    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    hc.attached_to = crystal.name
+    hc.output_filename = "spect.root"
+    hc.attributes = [
+        "PostPosition",
+        "PreKineticEnergy",
+        "TotalEnergyDeposit",
+        
+
+    ]
     """
     Start the simulation ! You can relax and drink coffee.
     """
