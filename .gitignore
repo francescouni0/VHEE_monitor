@@ -1,4 +1,3 @@
 /opengate_env/
-/output/
-/__pycache__/
-/output/spect.root
+/output/*
+spect.root
