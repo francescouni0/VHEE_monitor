@@ -1,0 +1,538 @@
+Simulation name: simulation 
+Geometry       : **** Volume manager ****
+Number of volumes: 1
+The volumes are organized in the following hierarchy:
+volume_tree_root
+    world
+
+Physics        : physics_list_name: QGSP_BERT_EMV
+global_production_cuts: {'all': None, 'gamma': None, 'electron': None, 'positron': None, 'proton': None}
+apply_cuts: True
+energy_range_min: None
+energy_range_max: None
+optical_properties_file: /workspace/gate/opengate/opengate/data/OpticalProperties.xml
+surface_properties_file: /workspace/gate/opengate/opengate/data/SurfaceProperties.xml
+user_limits_particles: {'all': False, 'all_charged': True, 'gamma': False, 'electron': False, 'positron': False, 'proton': False}
+em_parameters: {'fluo': None, 'auger': None, 'auger_cascade': None, 'pixe': None, 'deexcitation_ignore_cut': None}
+em_switches_world: {'deex': None, 'auger': None, 'pixe': None}
+special_physics_constructors: {'G4DecayPhysics': False, 'G4RadioactiveDecayPhysics': False, 'G4OpticalPhysics': False, 'G4EmDNAPhysics': False}
+mean_energy_per_ion_pair: {}
+name: physics_manager
+
+Sources        :  (0)
+Actors         : The actor manager contains the following actors: 
+Number of Actors: 0
+[32mSimulation: create MTRunManager with 50 threads[0m
+[32mSimulation: initialize Geometry[0m
+[32mSimulation: initialize Physics[0m
+[32mSimulation: initialize Source[0m
+[32mSimulation: initialize G4RunManager[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[32mSimulation: initialize PhysicsEngine after RunManager initialization[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "dose" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "lateral_edep" (attached to "pmmacyl") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[32mSimulation: initialize actors[0m
+[36mDEBUG   [0m[36mActor: initialize [SimulationStatisticsActor] stats[0m
+[36mDEBUG   [0m[36mActor: initialize [DoseActor] dose[0m
+[36mDEBUG   [0m[36mActor: initialize [DoseActor] lateral_edep[0m
+[36mDEBUG   [0m[36mActor: initialize [DigitizerHitsCollectionActor] Hits_crystal[0m
+[32mSimulation: check volumes overlap[0m
+[33mWARNING [0m[33mCould not check overlap for volume world_collimator_hole2_param.[0m
+[32m--------------------------------------------------------------------------------
+Simulation: START (around 100000000 events expected)[0m
+[38;2;255;228;196mStarting run 0 (35)
+[0m[38;2;255;228;196mStarting run 0 (6)
+[0m[38;2;255;228;196mStarting run 0 (22)
+[0m[38;2;255;228;196mStarting run 0 (32)
+[0m[38;2;255;228;196mStarting run 0 (45)
+[0m[38;2;255;228;196mStarting run 0 (34)
+[0m[38;2;255;228;196mStarting run 0 (14)
+[0m[38;2;255;228;196mStarting run 0 (28)
+[0m[38;2;255;228;196mStarting run 0 (39)
+[0m[38;2;255;228;196mStarting run 0 (30)
+[0m[38;2;255;228;196mStarting run 0 (11)
+[0m[38;2;255;228;196mStarting run 0 (23)
+[0m[38;2;255;228;196mStarting run 0 (37)
+[0m[38;2;255;228;196mStarting run 0 (36)
+[0m[38;2;255;228;196mStarting run 0 (21)
+[0m[38;2;255;228;196mStarting run 0 (27)
+[0m[38;2;255;228;196mStarting run 0 (26)
+[0m[38;2;255;228;196mStarting run 0 (42)
+[0m[38;2;255;228;196mStarting run 0 (16)
+[0m[38;2;255;228;196mStarting run 0 (43)
+[0m[38;2;255;228;196mStarting run 0 (18)
+[0m[38;2;255;228;196mStarting run 0 (29)
+[0m[38;2;255;228;196mStarting run 0 (47)
+[0m[38;2;255;228;196mStarting run 0 (7)
+[0m[38;2;255;228;196mStarting run 0 (4)
+[0m[38;2;255;228;196mStarting run 0 (9)
+[0m[38;2;255;228;196mStarting run 0 (10)
+[0m[38;2;255;228;196mStarting run 0 (17)
+[0m[38;2;255;228;196mStarting run 0 (20)
+[0m[38;2;255;228;196mStarting run 0 (38)
+[0m[38;2;255;228;196mStarting run 0 (13)
+[0m[38;2;255;228;196mStarting run 0 (1)
+[0m[38;2;255;228;196mStarting run 0 (48)
+[0m[38;2;255;228;196mStarting run 0 (44)
+[0m[38;2;255;228;196mStarting run 0 (2)
+[0m[38;2;255;228;196mStarting run 0 (12)
+[0m[38;2;255;228;196mStarting run 0 (24)
+[0m[38;2;255;228;196mStarting run 0 (25)
+[0m[38;2;255;228;196mStarting run 0 (31)
+[0m[38;2;255;228;196mStarting run 0 (40)
+[0m[38;2;255;228;196mStarting run 0 (46)
+[0m[38;2;255;228;196mStarting run 0 (5)
+[0m[38;2;255;228;196mStarting run 0 (3)
+[0m[38;2;255;228;196mStarting run 0 (8)
+[0m[38;2;255;228;196mStarting run 0 (41)
+[0m[38;2;255;228;196mStarting run 0 (15)
+[0m[38;2;255;228;196mStarting run 0 (33)
+[0m[38;2;255;228;196mStarting run 0 (49)
+[0m[38;2;255;228;196mStarting run 0 (19)
+[0m[38;2;255;228;196mStarting run 0 (0)
+[0m■                                                  [00m:00s<00m:00s] ■■                                                 [09m:18s<07h:35m:43s] ■■                                                 [18m:37s<10h:02m:06s] ■■■                                                [27m:54s<11h:09m:40s] ■■■                                                [37m:09s<11h:46m:09s] ■■■■                                               [46m:25s<12h:07m:15s] ■■■■                                               [55m:38s<12h:19m:19s] ■■■■■                                              [01h:04m:52s<12h:26m:04s] ■■■■■                                              [01h:14m:04s<12h:29m:02s] ■■■■■■                                             [01h:23m:20s<12h:30m:00s] ■■■■■■                                             [01h:32m:34s<12h:28m:59s] ■■■■■■■                                            [01h:41m:51s<12h:26m:59s] ■■■■■■■                                            [01h:51m:06s<12h:23m:32s] ■■■■■■■■                                           [02h:00m:20s<12h:19m:14s] ■■■■■■■■                                           [02h:09m:33s<12h:14m:08s] ■■■■■■■■■                                          [02h:18m:48s<12h:08m:43s] ■■■■■■■■■                                          [02h:28m:03s<12h:02m:52s] ■■■■■■■■■■                                         [02h:37m:20s<11h:56m:45s] ■■■■■■■■■■                                         [02h:46m:36s<11h:50m:15s] ■■■■■■■■■■■                                        [02h:55m:52s<11h:43m:30s] ■■■■■■■■■■■                                        [03h:05m:09s<11h:36m:31s] ■■■■■■■■■■■■                                       [03h:14m:22s<11h:29m:08s] ■■■■■■■■■■■■                                       [03h:23m:37s<11h:21m:41s] ■■■■■■■■■■■■■                                      [03h:32m:54s<11h:14m:11s] ■■■■■■■■■■■■■                                      [03h:42m:09s<11h:06m:27s] ■■■■■■■■■■■■■■                                     [03h:51m:23s<10h:58m:35s] ■■■■■■■■■■■■■■                                     [04h:00m:37s<10h:50m:35s] ■■■■■■■■■■■■■■■                                    [04h:09m:51s<10h:42m:29s] ■■■■■■■■■■■■■■■                                    [04h:19m:07s<10h:34m:24s] ■■■■■■■■■■■■■■■■                                   [04h:28m:21s<10h:26m:10s] ■■■■■■■■■■■■■■■■                                   [04h:37m:36s<10h:17m:53s] ■■■■■■■■■■■■■■■■■                                  [04h:46m:50s<10h:09m:31s] ■■■■■■■■■■■■■■■■■                                  [04h:56m:04s<10h:01m:07s] ■■■■■■■■■■■■■■■■■■                                 [05h:05m:16s<09h:52m:36s] ■■■■■■■■■■■■■■■■■■                                 [05h:14m:34s<09h:44m:12s] ■■■■■■■■■■■■■■■■■■■                                [05h:23m:50s<09h:35m:43s] ■■■■■■■■■■■■■■■■■■■                                [05h:33m:06s<09h:27m:11s] ■■■■■■■■■■■■■■■■■■■■                               [05h:42m:20s<09h:18m:33s] ■■■■■■■■■■■■■■■■■■■■                               [05h:51m:37s<09h:09m:58s] ■■■■■■■■■■■■■■■■■■■■■                              [06h:00m:51s<09h:01m:17s] ■■■■■■■■■■■■■■■■■■■■■                              [06h:10m:05s<08h:52m:34s] ■■■■■■■■■■■■■■■■■■■■■■                             [06h:19m:20s<08h:43m:51s] ■■■■■■■■■■■■■■■■■■■■■■                             [06h:28m:36s<08h:35m:07s] ■■■■■■■■■■■■■■■■■■■■■■■                            [06h:37m:49s<08h:26m:19s] ■■■■■■■■■■■■■■■■■■■■■■■                            [06h:47m:02s<08h:17m:30s] ■■■■■■■■■■■■■■■■■■■■■■■■                           [06h:56m:19s<08h:08m:44s] ■■■■■■■■■■■■■■■■■■■■■■■■                           [07h:05m:40s<08h:00m:01s] ■■■■■■■■■■■■■■■■■■■■■■■■■                          [07h:14m:56s<07h:51m:10s] ■■■■■■■■■■■■■■■■■■■■■■■■■                          [07h:24m:10s<07h:42m:17s] ■■■■■■■■■■■■■■■■■■■■■■■■■■                         [07h:33m:25s<07h:33m:25s] ■■■■■■■■■■■■■■■■■■■■■■■■■■                         [07h:42m:40s<07h:24m:31s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■                        [07h:51m:54s<07h:15m:36s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■                        [08h:01m:11s<07h:06m:42s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■                       [08h:10m:25s<06h:57m:46s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■                       [08h:19m:42s<06h:48m:51s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                      [08h:28m:59s<06h:39m:55s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                      [08h:38m:13s<06h:30m:56s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                     [08h:47m:26s<06h:21m:56s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                     [08h:56m:41s<06h:12m:57s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                    [09h:05m:54s<06h:03m:56s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                    [09h:15m:09s<05h:54m:56s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                   [09h:24m:23s<05h:45m:55s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                   [09h:33m:36s<05h:36m:52s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  [09h:42m:54s<05h:27m:53s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  [09h:52m:09s<05h:18m:51s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                 [10h:01m:27s<05h:09m:50s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                 [10h:10m:40s<05h:00m:46s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                [10h:19m:55s<04h:51m:43s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                [10h:29m:12s<04h:42m:41s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■               [10h:38m:25s<04h:33m:36s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■               [10h:47m:42s<04h:24m:33s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■              [10h:57m:01s<04h:15m:30s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■              [11h:06m:18s<04h:06m:26s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■             [11h:15m:33s<03h:57m:21s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■             [11h:24m:49s<03h:48m:16s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■            [11h:34m:04s<03h:39m:10s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■            [11h:43m:18s<03h:30m:04s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■           [11h:52m:33s<03h:20m:58s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■           [12h:01m:48s<03h:11m:52s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■          [12h:11m:01s<03h:02m:45s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■          [12h:20m:12s<02h:53m:37s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■         [12h:29m:28s<02h:44m:31s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■         [12h:38m:44s<02h:35m:24s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        [12h:48m:00s<02h:26m:17s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        [12h:57m:13s<02h:17m:09s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■       [13h:06m:28s<02h:08m:01s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■       [13h:15m:42s<01h:58m:53s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■      [13h:24m:54s<01h:49m:45s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■      [13h:34m:07s<01h:40m:37s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     [13h:43m:22s<01h:31m:29s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     [13h:52m:36s<01h:22m:20s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    [14h:01m:50s<01h:13m:12s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    [14h:11m:04s<01h:04m:03s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   [14h:20m:19s<54m:54s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   [14h:29m:33s<45m:45s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  [14h:38m:53s<36m:37s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  [14h:48m:07s<27m:28s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [14h:57m:22s<18m:18s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [15h:06m:37s<09m:09s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [15h:15m:46s<00m:00s] 
+[32mSimulation: STOP. Run: 1. Time: 55524.8 seconds.
+--------------------------------------------------------------------------------[0m
+runs                50 
+events              100000000 
+tracks              3140858178 
+steps               36003768341 
+init                1.22051 s
+duration            15.4232 h
+pps                 1801 
+tps                 56567 
+sps                 648440 
+start_time          Wed Dec  4 14:59:27 2024 
+stop_time           Thu Dec  5 06:24:51 2024 
+sim_start_time      0.0 ps
+sim_stop_time       1.0 s
+threads             50 
+arch                Linux 
+python              3.10.12 
+track_types
+                        Ar36: 3
+                        Ar40: 1327
+                        Bi209: 18
+                        C12: 13118228
+                        C13: 142489
+                        Ge73: 1
+                        Ge74: 1
+                        N14: 33539
+                        N15: 150
+                        O16: 9447952
+                        O17: 3614
+                        O18: 19397
+                        Pb204: 40326
+                        Pb206: 694971
+                        Pb207: 636082
+                        Pb208: 1509632
+                        deuteron: 73
+                        e+: 30136523
+                        e-: 1701958712
+                        gamma: 1382595631
+                        proton: 519509
