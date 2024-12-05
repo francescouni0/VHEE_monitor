@@ -30,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 50
+    sim.number_of_threads = 8
 
     sim.progress_bar = True
 
@@ -75,24 +75,26 @@ if __name__ == "__main__":
     sim.volume_manager.material_database.add_material_nb_atoms(
         "BGO", ["Bi", "Ge", "O"], [4, 3, 12], 7.13 * gcm3
     )
+    #CYLINDER
     pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
     pmmacyl.rmin = 0
     pmmacyl.rmax = 6 * cm
     pmmacyl.dz = 15 * cm
+ 
     pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
     pmmacyl.material = "G4_PLEXIGLASS  "
     pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
     
   
     # create detector
-    crystal = sim.add_volume("BoxVolume", "crystal")
-    crystal.size = [1 * cm, 3 * cm, 3 * cm]
-    crystal.translation = [15.5 * cm, 0 * cm, 0 * cm]
-    crystal.material = "BGO"
-    crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
+    #crystal = sim.add_volume("BoxVolume", "crystal")
+    #crystal.size = [1 * cm, 3 * cm, 3 * cm]
+    #crystal.translation = [15.5 * cm, 0 * cm, 0 * cm]
+    #crystal.material = "BGO"
+    #crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
     #CREATE COLLIMATOR
-    colli=add_collimator_he(sim, world, False)
+    #colli=add_collimator_he(sim, world, False)
 
 
 
@@ -108,11 +110,16 @@ if __name__ == "__main__":
     """
     The physic list and production cuts
     """
-    sim.physics_manager.physics_list_name = "G4EmStandardPhysics_option4"
+    sim.physics_manager.physics_list_name = "G4EmStandardPhysics_option1"
     sim.physics_manager.set_production_cut("world", "gamma", 1 * mm)
     sim.physics_manager.set_production_cut("world", "electron", 1 * mm)
     sim.physics_manager.set_production_cut("world", "positron", 1 * mm)
     sim.physics_manager.set_production_cut("world", "proton", 1 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "gamma", 1 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "electron", 1 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "positron", 1 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "proton", 1 * mm)
+
 
     """
     A source of particles. The shoot gammas are 1 MeV, emitted from a 10 mm disc
@@ -122,11 +129,11 @@ if __name__ == "__main__":
     source.particle = "e-"
     source.energy.mono = 150 * MeV
     source.position.type = "disc"
-    source.position.radius = 4 * mm
-    source.position.translation = [0, 0, -20 * cm]
+    source.position.radius = 2 * mm
+    source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 2000000
+    source.n = 1250000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
@@ -148,15 +155,16 @@ if __name__ == "__main__":
       # dose actor 1: depth edep
     # dose actor 1: depth edep
     
-    if source.n >=1000000:
+    if source.n >=99999:
         depth_dose = sim.add_actor("DoseActor", "dose")
         depth_dose.attached_to = "pmmacyl"
         depth_dose.output_filename = "dose3d.mhd"
-        depth_dose.output_coordinate_system='global'
         depth_dose.spacing = [1 * mm, 1 * mm, 1 * mm]
         depth_dose.size = [120, 120, 300]
         depth_dose.dose.active = True
         depth_dose.dose_uncertainty.active = True
+        
+
     
     
         # dose actor 2: edep profile
@@ -169,16 +177,16 @@ if __name__ == "__main__":
         
         
         
-    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
-    hc.attached_to = crystal.name
-    hc.output_filename = "spect.root"
-    hc.attributes = [
-        "PostPosition",
-        "PreKineticEnergy",
-        "TotalEnergyDeposit",
-        
-
-    ]
+    #hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    #hc.attached_to = crystal.name
+    #hc.output_filename = "spect.root"
+    #hc.attributes = [
+    #    "PostPosition",
+    #    "PreKineticEnergy",
+    #    "TotalEnergyDeposit",
+    #    
+#
+    #]
     """
     Start the simulation ! You can relax and drink coffee.
     """
