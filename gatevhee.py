@@ -30,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 50
+    sim.number_of_threads = 4
 
     sim.progress_bar = True
 
@@ -94,7 +94,7 @@ if __name__ == "__main__":
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
     #CREATE COLLIMATOR
-    colli=add_collimator_he(sim, world, False)
+    #colli=add_collimator_he(sim, world, False)
 
 
 
@@ -133,7 +133,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 2000000
+    source.n = 10000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
@@ -177,16 +177,31 @@ if __name__ == "__main__":
         
         
         
-    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
-    hc.attached_to = crystal.name
-    hc.output_filename = "spect.root"
-    hc.attributes = [
-        "PostPosition",
-        "PreKineticEnergy",
-        "TotalEnergyDeposit",
+    #hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    #hc.attached_to = crystal.name
+    #hc.output_filename = "spect.root"
+    #hc.attributes = [
+    #    "PostPosition",
+    #    "PreKineticEnergy",
+    #    "TotalEnergyDeposit",]
+        
+    ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
+    ps.output_filename = "phase_space.root"
+    ps.attached_to = "crystal"
+    ps.attributes = [
+    "KineticEnergy",
+    "PostPosition",
+    "PrePosition",
+    "PreDirection",
+    "EventPosition",
+    ]
+    f = sim.add_filter("ParticleFilter", "f")
+    f.particle = "gamma"
+    ps.filters.append(f)
+    
         
 
-    ]
+    
     """
     Start the simulation ! You can relax and drink coffee.
     """
