@@ -11,8 +11,8 @@ def add_collimator_he(sim, head, debug):
 
     colli = sim.add_volume("Box", f"{name}_he_collimator")
     colli.mother = name
-    colli.size = [80 * mm, 60 * mm, 500 * mm]
-    colli.translation = [110 * mm, 0, 0]
+    colli.size = [100 * mm, 120 * mm, 300 * mm]
+    colli.translation = [115 * mm, 0, 0]
     colli.color  = [0.5, 0.5, 0.5, 1]
     colli.material = "Lead"
 
@@ -48,15 +48,15 @@ def add_collimator_he(sim, head, debug):
     #square
     #grandezza effettiva
     hole = sim.add_volume("Box", f"{name}_collimator_hole2")
-    hole.size = [5 * mm, 5* mm, 80 * mm]
+    hole.size = [2.5 * mm, 2.5* mm, 100 * mm]
     hole.material = "G4_AIR"
     hole.mother = colli.name
     
     
     # parameterised holes
-    size = [1, 1, 30]
+    size = [1, 24, 60]
      #traslazione tra coppie di buchi (distanza dal centro)
-    tr = [0, 10 * mm, 10 * mm, 0]
+    tr = [0, 5 * mm, 5 * mm, 0]
     rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     #implementa offset diagonale
     offset = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
