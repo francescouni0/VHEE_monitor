@@ -187,7 +187,8 @@ if __name__ == "__main__":
         
     ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
     ps.output_filename = "phase_space.root"
-    ps.attached_to = "crystal"
+    ps.attached_to = "pmmacyl"
+    ps.steps_to_store = " exiting "
     ps.attributes = [
     "KineticEnergy",
     "PostPosition",
