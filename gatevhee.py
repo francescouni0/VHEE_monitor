@@ -88,8 +88,8 @@ if __name__ == "__main__":
   
     # create detector
     crystal = sim.add_volume("BoxVolume", "crystal")
-    crystal.size = [1 * cm, 12 * cm, 35 * cm]
-    crystal.translation = [17 * cm, 0 * cm, 0 * cm]
+    crystal.size = [5 * mm, 12 * cm, 35 * cm]
+    crystal.translation = [38 * cm, 0 * cm, 0 * cm]
     crystal.material = "BGO"
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
@@ -119,13 +119,10 @@ if __name__ == "__main__":
     sim.physics_manager.set_production_cut("pmmacyl", "electron", 5 * mm)
     sim.physics_manager.set_production_cut("pmmacyl", "positron", 10 * mm)
     sim.physics_manager.set_production_cut("pmmacyl", "proton", 10 * mm)
-    
+    sim.physics_manager.set_production_cut("world_he_collimator", "gamma", 0.02* mm)
+
 
    
-    sim.physics_manager.set_production_cut("world_he_collimator", "gamma", 400 * mm)
-    sim.physics_manager.set_production_cut("world_he_collimator", "electron", 400 * mm)
-    sim.physics_manager.set_production_cut("world_he_collimator", "positron", 400 * mm)
-    sim.physics_manager.set_production_cut("world_he_collimator", "proton", 400 * mm)
 
 
 
@@ -189,7 +186,7 @@ if __name__ == "__main__":
     hc.attached_to = crystal.name
     hc.output_filename = "spect.root"
     hc.attributes = [
-        "PrePosition",
+        "PostPosition",
         "PreKineticEnergy",
         "TotalEnergyDeposit",
         "PreDirection"]

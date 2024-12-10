@@ -12,7 +12,7 @@ def add_collimator_he(sim, head, debug):
     colli = sim.add_volume("Box", f"{name}_he_collimator")
     colli.mother = name
     colli.size = [80 * mm, 120 * mm, 350 * mm]
-    colli.translation = [115 * mm, 0, 0]
+    colli.translation = [300 * mm, 0, 0]
     colli.color  = [0.5, 0.5, 0.5, 1]
     colli.material = "Lead"
 
