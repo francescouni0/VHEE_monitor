@@ -24,13 +24,13 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = False
+    sim.visu = True
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 10
+    sim.number_of_threads = 1
 
     sim.progress_bar = True
 
@@ -85,16 +85,28 @@ if __name__ == "__main__":
     pmmacyl.material = "G4_PLEXIGLASS  "
     pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
     
-  
+    colli=add_collimator_he(sim, world, False)
+
     # create detector
-    crystal = sim.add_volume("BoxVolume", "crystal")
-    crystal.size = [5 * mm, 12 * cm, 35 * cm]
-    crystal.translation = [38 * cm, 0 * cm, 0 * cm]
+    crystal = sim.add_volume("Box", "crystal")
+    crystal.size = [2.5 * mm, 2.5* mm, 5 * mm]
     crystal.material = "BGO"
+    crystal.mother = "pmmacyl"
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
+        # parameterised crystals
+    size = [1, 24, 60]
+     #traslazione tra coppie di buchi (distanza dal centro)
+    tr = [0, 5 * mm, 5 * mm, 0]
+    rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()
+    #implementa offset diagonale
+    offset = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
+    repeat_colli_hole(sim, crystal, size, tr, rot, offset)
+    crystal.translation = [38 * cm, 0 * cm, 0 * cm]
+
+    
+    
     #CREATE COLLIMATOR
-    colli=add_collimator_he(sim, world, False)
 
 
 
@@ -138,7 +150,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 10000000
+    source.n = 1
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
