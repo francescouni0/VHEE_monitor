@@ -24,13 +24,13 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = True
+    sim.visu = False
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 1
+    sim.number_of_threads = 4
 
     sim.progress_bar = True
 
@@ -87,25 +87,31 @@ if __name__ == "__main__":
     
     colli=add_collimator_he(sim, world, False)
 
+
+    sim.add_parallel_world("parallel_world")
     # create detector
     crystal = sim.add_volume("Box", "crystal")
-    crystal.size = [2.5 * mm, 2.5* mm, 5 * mm]
+    crystal.size = [2.5 * mm, 2.5* mm, 2.5 * mm]
     crystal.material = "BGO"
-    crystal.mother = "pmmacyl"
+    crystal.mother = "parallel_world"
+    crystal.translation = [-170*mm, 0, 0]
+
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
         # parameterised crystals
     size = [1, 24, 60]
      #traslazione tra coppie di buchi (distanza dal centro)
-    tr = [0, 5 * mm, 5 * mm, 0]
-    rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()
+    tr_cry = [0*mm, 5 * mm, 5 * mm, 0]
+    rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
+    start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
+    start_cry[0] = +171.25 * mm
+
     #implementa offset diagonale
-    offset = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
-    repeat_colli_hole(sim, crystal, size, tr, rot, offset)
-    crystal.translation = [38 * cm, 0 * cm, 0 * cm]
+    offset_cry = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
+    repeat_colli_hole(sim, crystal, size, tr_cry, rot_cry,start_cry, offset_cry)
 
     
-    
+
     #CREATE COLLIMATOR
 
 
@@ -150,7 +156,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 1
+    source.n = 250000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.

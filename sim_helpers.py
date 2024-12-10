@@ -60,7 +60,8 @@ def add_collimator_he(sim, head, debug):
     rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     #implementa offset diagonale
     offset = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
-    repeat_colli_hole(sim, hole, size, tr, rot, offset)
+    start= [-(x - 1) * y / 2.0 for x, y in zip(size, tr)]
+    repeat_colli_hole(sim, hole, size, tr, rot,start, offset)
     
     
 
@@ -72,12 +73,12 @@ def add_collimator_he(sim, head, debug):
 
 
 
-def repeat_colli_hole(sim, hole, size, tr, rot, offset):
+def repeat_colli_hole(sim, hole, size, tr, rot,start, offset):
     holep = RepeatParametrisedVolume(repeated_volume=hole)
     holep.linear_repeat = size
     holep.translation = tr[0:3]
     holep.rotation = rot
-    holep.start = [-(x - 1) * y / 2.0 for x, y in zip(size, tr)]
+    holep.start = start
     # do it twice, with the following offset se 1 no offset
     holep.offset_nb = 1
     holep.offset = offset
