@@ -88,8 +88,8 @@ if __name__ == "__main__":
   
     # create detector
     crystal = sim.add_volume("BoxVolume", "crystal")
-    crystal.size = [1 * cm, 12 * cm, 30 * cm]
-    crystal.translation = [17.5 * cm, 0 * cm, 0 * cm]
+    crystal.size = [1 * cm, 12 * cm, 35 * cm]
+    crystal.translation = [17 * cm, 0 * cm, 0 * cm]
     crystal.material = "BGO"
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
@@ -115,10 +115,18 @@ if __name__ == "__main__":
     sim.physics_manager.set_production_cut("world", "electron", 1 * mm)
     sim.physics_manager.set_production_cut("world", "positron", 1 * mm)
     sim.physics_manager.set_production_cut("world", "proton", 1 * mm)
-    sim.physics_manager.set_production_cut("pmmacyl", "gamma", 1 * mm)
-    sim.physics_manager.set_production_cut("pmmacyl", "electron", 1 * mm)
-    sim.physics_manager.set_production_cut("pmmacyl", "positron", 1 * mm)
-    sim.physics_manager.set_production_cut("pmmacyl", "proton", 1 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "gamma", 15 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "electron", 5 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "positron", 10 * mm)
+    sim.physics_manager.set_production_cut("pmmacyl", "proton", 10 * mm)
+    
+
+   
+    sim.physics_manager.set_production_cut("world_he_collimator", "gamma", 400 * mm)
+    sim.physics_manager.set_production_cut("world_he_collimator", "electron", 400 * mm)
+    sim.physics_manager.set_production_cut("world_he_collimator", "positron", 400 * mm)
+    sim.physics_manager.set_production_cut("world_he_collimator", "proton", 400 * mm)
+
 
 
     """
@@ -133,7 +141,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 20000000
+    source.n = 2000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
@@ -175,15 +183,16 @@ if __name__ == "__main__":
         lateral_edep.size = [100, 1, 1]
         lateral_edep.edep_uncertainty.active = True
         
-        
+
         
     hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
     hc.attached_to = crystal.name
     hc.output_filename = "spect.root"
     hc.attributes = [
-        "PostPosition",
+        "PrePosition",
         "PreKineticEnergy",
-        "TotalEnergyDeposit",]
+        "TotalEnergyDeposit",
+        "PreDirection"]
         
     #ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
     #ps.output_filename = "phase_space.root"
