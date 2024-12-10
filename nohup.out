@@ -1,0 +1,135 @@
+Simulation name: simulation 
+Geometry       : **** Volume manager ****
+Number of volumes: 1
+The volumes are organized in the following hierarchy:
+volume_tree_root
+    world
+
+Physics        : physics_list_name: QGSP_BERT_EMV
+global_production_cuts: {'all': None, 'gamma': None, 'electron': None, 'positron': None, 'proton': None}
+apply_cuts: True
+energy_range_min: None
+energy_range_max: None
+optical_properties_file: /workspace/gate/opengate/opengate/data/OpticalProperties.xml
+surface_properties_file: /workspace/gate/opengate/opengate/data/SurfaceProperties.xml
+user_limits_particles: {'all': False, 'all_charged': True, 'gamma': False, 'electron': False, 'positron': False, 'proton': False}
+em_parameters: {'fluo': None, 'auger': None, 'auger_cascade': None, 'pixe': None, 'deexcitation_ignore_cut': None}
+em_switches_world: {'deex': None, 'auger': None, 'pixe': None}
+special_physics_constructors: {'G4DecayPhysics': False, 'G4RadioactiveDecayPhysics': False, 'G4OpticalPhysics': False, 'G4EmDNAPhysics': False}
+mean_energy_per_ion_pair: {}
+name: physics_manager
+
+Sources        :  (0)
+Actors         : The actor manager contains the following actors: 
+Number of Actors: 0
+[32mSimulation: create MTRunManager with 10 threads[0m
+[32mSimulation: initialize Geometry[0m
+[32mSimulation: initialize Physics[0m
+[32mSimulation: initialize Source[0m
+[32mSimulation: initialize G4RunManager[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[32mSimulation: initialize PhysicsEngine after RunManager initialization[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "pmmacyl"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_he_collimator"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "stats" (attached to "world") set to volume "world_collimator_hole2"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[36mDEBUG   [0m[36mActor: "Hits_crystal" (attached to "crystal") set to volume "crystal"[0m
+[32mSimulation: initialize actors[0m
+[36mDEBUG   [0m[36mActor: initialize [SimulationStatisticsActor] stats[0m
+[36mDEBUG   [0m[36mActor: initialize [DigitizerHitsCollectionActor] Hits_crystal[0m
+[32mSimulation: check volumes overlap[0m
+[33mWARNING [0m[33mCould not check overlap for volume world_collimator_hole2_param.[0m
+[33mWARNING [0m[33mCould not check overlap for volume crystal_param.[0m
+[32m--------------------------------------------------------------------------------
+Simulation: START (around 100000000 events expected)[0m
+[38;2;255;228;196mStarting run 0 (7)
+[0m[38;2;255;228;196mStarting run 0 (3)
+[0m[38;2;255;228;196mStarting run 0 (9)
+[0m[38;2;255;228;196mStarting run 0 (1)
+[0m[38;2;255;228;196mStarting run 0 (6)
+[0m[38;2;255;228;196mStarting run 0 (5)
+[0m[38;2;255;228;196mStarting run 0 (2)
+[0m[38;2;255;228;196mStarting run 0 (8)
+[0m[38;2;255;228;196mStarting run 0 (4)
+[0m[38;2;255;228;196mStarting run 0 (0)
+[0m■                                                  [00m:00s<00m:00s] ■■                                                 [00m:14s<12m:10s] ■■                                                 [00m:29s<16m:01s] ■■■                                                [00m:44s<17m:44s] ■■■                                                [00m:58s<18m:39s] ■■■■                                               [01m:13s<19m:11s] ■■■■                                               [01m:28s<19m:30s] ■■■■■                                              [01m:42s<19m:41s] ■■■■■                                              [01m:57s<19m:46s] ■■■■■■                                             [02m:11s<19m:47s] ■■■■■■                                             [02m:26s<19m:45s] ■■■■■■■                                            [02m:41s<19m:41s] ■■■■■■■                                            [02m:55s<19m:35s] ■■■■■■■■                                           [03m:10s<19m:29s] ■■■■■■■■                                           [03m:24s<19m:21s] ■■■■■■■■■                                          [03m:39s<19m:12s] ■■■■■■■■■                                          [03m:54s<19m:02s] ■■■■■■■■■■                                         [04m:08s<18m:52s] ■■■■■■■■■■                                         [04m:23s<18m:42s] ■■■■■■■■■■■                                        [04m:37s<18m:31s] ■■■■■■■■■■■                                        [04m:52s<18m:20s] ■■■■■■■■■■■■                                       [05m:07s<18m:08s] ■■■■■■■■■■■■                                       [05m:21s<17m:56s] ■■■■■■■■■■■■■                                      [05m:36s<17m:44s] ■■■■■■■■■■■■■                                      [05m:50s<17m:32s] ■■■■■■■■■■■■■■                                     [06m:05s<17m:20s] ■■■■■■■■■■■■■■                                     [06m:20s<17m:07s] ■■■■■■■■■■■■■■■                                    [06m:34s<16m:54s] ■■■■■■■■■■■■■■■                                    [06m:49s<16m:42s] ■■■■■■■■■■■■■■■■                                   [07m:03s<16m:29s] ■■■■■■■■■■■■■■■■                                   [07m:18s<16m:16s] ■■■■■■■■■■■■■■■■■                                  [07m:33s<16m:02s] ■■■■■■■■■■■■■■■■■                                  [07m:47s<15m:49s] ■■■■■■■■■■■■■■■■■■                                 [08m:02s<15m:36s] ■■■■■■■■■■■■■■■■■■                                 [08m:16s<15m:22s] ■■■■■■■■■■■■■■■■■■■                                [08m:31s<15m:09s] ■■■■■■■■■■■■■■■■■■■                                [08m:46s<14m:55s] ■■■■■■■■■■■■■■■■■■■■                               [09m:00s<14m:42s] ■■■■■■■■■■■■■■■■■■■■                               [09m:15s<14m:28s] ■■■■■■■■■■■■■■■■■■■■■                              [09m:30s<14m:15s] ■■■■■■■■■■■■■■■■■■■■■                              [09m:44s<14m:01s] ■■■■■■■■■■■■■■■■■■■■■■                             [09m:59s<13m:47s] ■■■■■■■■■■■■■■■■■■■■■■                             [10m:13s<13m:33s] ■■■■■■■■■■■■■■■■■■■■■■■                            [10m:28s<13m:19s] ■■■■■■■■■■■■■■■■■■■■■■■                            [10m:43s<13m:06s] ■■■■■■■■■■■■■■■■■■■■■■■■                           [10m:57s<12m:52s] ■■■■■■■■■■■■■■■■■■■■■■■■                           [11m:12s<12m:38s] ■■■■■■■■■■■■■■■■■■■■■■■■■                          [11m:26s<12m:24s] ■■■■■■■■■■■■■■■■■■■■■■■■■                          [11m:41s<12m:10s] ■■■■■■■■■■■■■■■■■■■■■■■■■■                         [11m:56s<11m:56s] ■■■■■■■■■■■■■■■■■■■■■■■■■■                         [12m:10s<11m:42s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■                        [12m:25s<11m:28s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■                        [12m:40s<11m:14s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■                       [12m:54s<10m:59s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■                       [13m:09s<10m:45s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                      [13m:23s<10m:31s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                      [13m:38s<10m:17s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                     [13m:53s<10m:03s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                     [14m:07s<09m:49s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                    [14m:22s<09m:34s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                    [14m:36s<09m:20s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                   [14m:51s<09m:06s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                   [15m:06s<08m:52s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  [15m:20s<08m:37s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                  [15m:35s<08m:23s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                 [15m:50s<08m:09s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                 [16m:04s<07m:55s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                [16m:19s<07m:40s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                [16m:33s<07m:26s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■               [16m:48s<07m:12s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■               [17m:03s<06m:57s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■              [17m:17s<06m:43s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■              [17m:32s<06m:29s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■             [17m:47s<06m:14s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■             [18m:01s<06m:00s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■            [18m:16s<05m:46s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■            [18m:30s<05m:31s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■           [18m:45s<05m:17s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■           [19m:00s<05m:03s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■          [19m:14s<04m:48s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■          [19m:29s<04m:34s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■         [19m:44s<04m:19s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■         [19m:58s<04m:05s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        [20m:13s<03m:51s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        [20m:27s<03m:36s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■       [20m:42s<03m:22s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■       [20m:57s<03m:07s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■      [21m:11s<02m:53s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■      [21m:26s<02m:38s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     [21m:40s<02m:24s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■     [21m:55s<02m:10s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    [22m:10s<01m:55s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■    [22m:24s<01m:41s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   [22m:39s<01m:26s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■   [22m:54s<01m:12s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  [23m:08s<00m:57s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■  [23m:23s<00m:43s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [23m:38s<00m:28s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [23m:52s<00m:14s] ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■ [24m:07s<00m:00s] 
+[32mSimulation: STOP. Run: 1. Time: 1468.0 seconds.
+--------------------------------------------------------------------------------[0m
+runs                10 
+events              100000000 
+tracks              2537604146 
+steps               8364352119 
+init                1.067 ms
+duration            24.4672 min
+pps                 68118 
+tps                 1728576 
+sps                 5697667 
+start_time          Tue Dec 10 17:43:25 2024 
+stop_time           Tue Dec 10 18:07:53 2024 
+sim_start_time      0.0 ps
+sim_stop_time       1.0 s
+threads             10 
+arch                Linux 
+python              3.10.12 
+track_types
+                        Ar36: 1
+                        Ar40: 3
+                        C12: 944
+                        C13: 7
+                        N14: 107
+                        O16: 301
+                        O17: 1
+                        O18: 2
+                        e+: 27868969
+                        e-: 1298695368
+                        gamma: 1211038307
+                        proton: 136
