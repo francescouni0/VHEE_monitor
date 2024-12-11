@@ -217,7 +217,6 @@ if __name__ == "__main__":
     sc.policy = "EnergyWeightedCentroidPosition"
     sc.discretize_volume = crystal.name
     # sc.policy = "EnergyWinnerPosition"
-    sc.group_volume = crystal.name
         
     #ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
     #ps.output_filename = "phase_space.root"
