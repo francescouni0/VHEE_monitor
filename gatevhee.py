@@ -215,6 +215,7 @@ if __name__ == "__main__":
     sc.output_filename = 'spect_hits.root'
     sc.input_digi_collection = "Hits_crystal"
     sc.policy = "EnergyWeightedCentroidPosition"
+    sc.discretize_volume = crystal.name
     # sc.policy = "EnergyWinnerPosition"
     sc.group_volume = crystal.name
         
