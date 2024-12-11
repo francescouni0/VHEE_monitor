@@ -207,7 +207,8 @@ if __name__ == "__main__":
         "PostPosition",
         "PreKineticEnergy",
         "TotalEnergyDeposit",
-        "PreDirection"]
+        "PreDirection",
+        'PreStepUniqueVolumeID']
     
     sc = sim.add_actor("DigitizerAdderActor", "Singles")
     sc.output_filename = 'spect_hits.root'
