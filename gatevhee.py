@@ -200,7 +200,7 @@ if __name__ == "__main__":
         
 
         
-    hc = sim.add_actor("HitsReadoutActor", f"Hits_{crystal.name}")
+    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
     hc.attached_to = crystal.name
     hc.output_filename = "spect_data.root"
     hc.attributes = [
@@ -211,7 +211,7 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     
-    sc = sim.add_actor("DigitizerAdderActor", "Singles")
+    sc = sim.add_actor("HitsReadoutActor", "Singles")
     sc.output_filename = 'spect_hits.root'
     sc.input_digi_collection = "Hits_crystal"
     sc.policy = "EnergyWeightedCentroidPosition"
