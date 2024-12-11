@@ -211,7 +211,7 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     
-    sc = sim.add_actor("HitsReadoutActor", "Singles")
+    sc = sim.add_actor("DigitizerReadoutActor", "Singles")
     sc.output_filename = 'spect_hits.root'
     sc.input_digi_collection = "Hits_crystal"
     sc.policy = "EnergyWeightedCentroidPosition"
