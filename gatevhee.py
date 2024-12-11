@@ -204,13 +204,14 @@ if __name__ == "__main__":
     hc.attached_to = crystal.name
     hc.output_filename = "spect_data.root"
     hc.attributes = [
+        "PostPosition",
         "PreKineticEnergy",
         "TotalEnergyDeposit",
         "PreDirection"]
     
     sc = sim.add_actor("DigitizerAdderActor", "Singles")
     sc.output_filename = 'spect_hits.root'
-    sc.input_digi_collection = "Hits"
+    sc.input_digi_collection = "Hits_crystal"
     sc.policy = "EnergyWeightedCentroidPosition"
     # sc.policy = "EnergyWinnerPosition"
     sc.group_volume = crystal.name
