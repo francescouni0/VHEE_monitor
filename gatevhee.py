@@ -200,7 +200,7 @@ if __name__ == "__main__":
         
 
         
-    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    hc = sim.add_actor("HitsReadoutActor", f"Hits_{crystal.name}")
     hc.attached_to = crystal.name
     hc.output_filename = "spect_data.root"
     hc.attributes = [
