@@ -150,7 +150,7 @@ if __name__ == "__main__":
     """
     source = sim.add_source("GenericSource", "mysource")
     source.particle = "e-"
-    source.energy.mono = 150 * MeV
+    source.energy.mono = 80 * MeV
     source.position.type = "disc"
     source.position.radius = 2 * mm
     source.position.translation = [0, 0, -50 * cm]
@@ -211,12 +211,12 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     
-    sc = sim.add_actor("DigitizerReadoutActor", "Singles")
+    sc = sim.add_actor("DigitizerAdderActor", "Singles")
     sc.output_filename = 'spect_hits.root'
     sc.input_digi_collection = "Hits_crystal"
     sc.policy = "EnergyWeightedCentroidPosition"
-    sc.discretize_volume = crystal.name
     # sc.policy = "EnergyWinnerPosition"
+    sc.group_volume = crystal.name
         
     #ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
     #ps.output_filename = "phase_space.root"
