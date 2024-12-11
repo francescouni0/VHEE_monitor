@@ -150,7 +150,7 @@ if __name__ == "__main__":
     """
     source = sim.add_source("GenericSource", "mysource")
     source.particle = "e-"
-    source.energy.mono = 80 * MeV
+    source.energy.mono = 150 * MeV
     source.position.type = "disc"
     source.position.radius = 2 * mm
     source.position.translation = [0, 0, -50 * cm]
