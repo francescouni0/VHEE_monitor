@@ -161,13 +161,13 @@ if __name__ == "__main__":
     """
     source = sim.add_source("GenericSource", "mysource")
     source.particle = "e-"
-    source.energy.mono = 150 * MeV
+    source.energy.mono = 80 * MeV
     source.position.type = "disc"
     source.position.radius = 2 * mm
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 100000
+    source.n = 10000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
@@ -189,25 +189,25 @@ if __name__ == "__main__":
       # dose actor 1: depth edep
     # dose actor 1: depth edep
     
-    if source.n >=99999:
-        depth_dose = sim.add_actor("DoseActor", "dose")
-        depth_dose.attached_to = "pmmacyl"
-        depth_dose.output_filename = "dose3d.mhd"
-        depth_dose.spacing = [1 * mm, 1 * mm, 1 * mm]
-        depth_dose.size = [120, 120, 300]
-        depth_dose.dose.active = True
-        depth_dose.dose_uncertainty.active = True
-        
-
-    
-    
-        # dose actor 2: edep profile
-        lateral_edep = sim.add_actor("DoseActor", "lateral_edep")
-        lateral_edep.attached_to = "pmmacyl"
-        lateral_edep.output_filename = "doselat.mhd"
-        lateral_edep.spacing = [0.5 * mm, 40 * cm, 40 * cm]
-        lateral_edep.size = [100, 1, 1]
-        lateral_edep.edep_uncertainty.active = True
+    #if source.n >=99999:
+    #    depth_dose = sim.add_actor("DoseActor", "dose")
+    #    depth_dose.attached_to = "pmmacyl"
+    #    depth_dose.output_filename = "dose3d.mhd"
+    #    depth_dose.spacing = [1 * mm, 1 * mm, 1 * mm]
+    #    depth_dose.size = [120, 120, 300]
+    #    depth_dose.dose.active = True
+    #    depth_dose.dose_uncertainty.active = True
+    #    
+#
+    #
+    #
+    #    # dose actor 2: edep profile
+    #    lateral_edep = sim.add_actor("DoseActor", "lateral_edep")
+    #    lateral_edep.attached_to = "pmmacyl"
+    #    lateral_edep.output_filename = "doselat.mhd"
+    #    lateral_edep.spacing = [0.5 * mm, 40 * cm, 40 * cm]
+    #    lateral_edep.size = [100, 1, 1]
+    #    lateral_edep.edep_uncertainty.active = True
         
 
         
