@@ -24,7 +24,7 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = True
+    sim.visu = False
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
