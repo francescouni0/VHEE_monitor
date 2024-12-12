@@ -67,7 +67,9 @@ if __name__ == "__main__":
     """
     
     # create the material lead
-    sim.volume_manager.material_database.add_material_nb_atoms( "G4_PLEXIGLASS  ", ["C", "H", "O"], [5, 8, 2], 1.19 * gcm3)
+    sim.volume_manager.material_database.add_material_nb_atoms( "G4_PLEXIGLASS  ", 
+        ["C", "H", "O"], [5, 8, 2], 1.19 * gcm3
+    )
     
     sim.volume_manager.material_database.add_material_nb_atoms(
         "Lead", ["Pb"], [1], 11.4 * gcm3
@@ -92,7 +94,7 @@ if __name__ == "__main__":
     # create detector
     crystal = sim.add_volume("Box", "crystal")
     crystal.size = [3 * mm, 3* mm, 2.5 * mm]
-    crystal.material = "BGO"
+    crystal.material = "G4_PLEXIGLASS"
     crystal.mother = "parallel_world"
     crystal.translation = [-170*mm, 0, 0]
 
