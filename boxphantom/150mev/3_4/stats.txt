@@ -4,43 +4,43 @@
         "unit": null
     },
     "events": {
-        "value": 10000000,
+        "value": 100000000,
         "unit": null
     },
     "tracks": {
-        "value": 251912115,
+        "value": 2518655995,
         "unit": null
     },
     "steps": {
-        "value": 898170278,
+        "value": 8980414040,
         "unit": null
     },
     "init": {
-        "value": 1.902,
+        "value": 1.634,
         "unit": "ms"
     },
     "duration": {
-        "value": 2.6997,
+        "value": 26.3401,
         "unit": "min"
     },
     "pps": {
-        "value": 61735,
+        "value": 63274,
         "unit": null
     },
     "tps": {
-        "value": 1555183,
+        "value": 1593674,
         "unit": null
     },
     "sps": {
-        "value": 5544870,
+        "value": 5682339,
         "unit": null
     },
     "start_time": {
-        "value": "Thu Dec 12 10:53:09 2024",
+        "value": "Thu Dec 12 12:28:23 2024",
         "unit": null
     },
     "stop_time": {
-        "value": "Thu Dec 12 10:55:51 2024",
+        "value": "Thu Dec 12 12:54:44 2024",
         "unit": null
     },
     "sim_start_time": {
@@ -65,14 +65,15 @@
     },
     "track_types": {
         "value": {
-            "C12": 107,
-            "C13": 3,
-            "N14": 12,
-            "O16": 24,
-            "e+": 2752164,
-            "e-": 128381738,
-            "gamma": 120778052,
-            "proton": 15
+            "Ar40": 3,
+            "C12": 982,
+            "C13": 14,
+            "N14": 99,
+            "O16": 323,
+            "e+": 27510249,
+            "e-": 1283529221,
+            "gamma": 1207614960,
+            "proton": 144
         },
         "unit": null
     }
