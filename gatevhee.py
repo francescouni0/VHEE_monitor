@@ -24,13 +24,13 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = False
+    sim.visu = True
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 10
+    sim.number_of_threads = 1
 
     sim.progress_bar = True
 
@@ -91,7 +91,7 @@ if __name__ == "__main__":
     sim.add_parallel_world("parallel_world")
     # create detector
     crystal = sim.add_volume("Box", "crystal")
-    crystal.size = [2.5 * mm, 2.5* mm, 2.5 * mm]
+    crystal.size = [3 * mm, 3* mm, 2.5 * mm]
     crystal.material = "BGO"
     crystal.mother = "parallel_world"
     crystal.translation = [-170*mm, 0, 0]
@@ -99,9 +99,9 @@ if __name__ == "__main__":
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
         # parameterised crystals
-    size = [1, 24, 60]
+    size = [1, 17, 43]
      #traslazione tra coppie di buchi (distanza dal centro)
-    tr_cry = [0*mm, 5 * mm, 5 * mm, 0]
+    tr_cry = [0, 7 * mm, 7 * mm, 0]
     rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
     start_cry[0] = +171.25 * mm
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 10000000
+    source.n = 1
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
