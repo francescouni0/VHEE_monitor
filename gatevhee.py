@@ -24,7 +24,7 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = False
+    sim.visu = True
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
@@ -78,14 +78,23 @@ if __name__ == "__main__":
         "BGO", ["Bi", "Ge", "O"], [4, 3, 12], 7.13 * gcm3
     )
     #CYLINDER
-    pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
-    pmmacyl.rmin = 0
-    pmmacyl.rmax = 6 * cm
-    pmmacyl.dz = 15 * cm
- 
+    #pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
+    #pmmacyl.rmin = 0
+    #pmmacyl.rmax = 10 * cm
+    #pmmacyl.dz = 15 * cm
+ #
+    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+    #pmmacyl.material = "G4_PLEXIGLASS  "
+    #pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
+    
+    #BOX
+    pmmacyl = sim.add_volume("Box", "pmmacyl")
+    pmmacyl.size = [20 * cm, 20 * cm, 30 * cm]
     pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
     pmmacyl.material = "G4_PLEXIGLASS  "
     pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
+    
+    
     
     colli=add_collimator_he(sim, world, False)
 
@@ -94,19 +103,19 @@ if __name__ == "__main__":
     # create detector
     crystal = sim.add_volume("Box", "crystal")
     crystal.size = [3 * mm, 3* mm, 2.5 * mm]
-    crystal.material = "G4_PLEXIGLASS"
+    crystal.material = "BGO"
     crystal.mother = "parallel_world"
-    crystal.translation = [-170*mm, 0, 0]
+    crystal.translation = [-200*mm, 0, 0]
 
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
         # parameterised crystals
-    size = [1, 17, 43]
+    size = [1, 27, 43]
      #traslazione tra coppie di buchi (distanza dal centro)
     tr_cry = [0, 7 * mm, 7 * mm, 0]
     rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
-    start_cry[0] = +171.25 * mm
+    start_cry[0] = +271.25 * mm
 
     #implementa offset diagonale
     offset_cry = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
@@ -158,7 +167,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 10000000
+    source.n = 1000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
