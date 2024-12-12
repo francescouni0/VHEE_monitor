@@ -110,9 +110,9 @@ if __name__ == "__main__":
     crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
     
         # parameterised crystals
-    size = [1, 27, 43]
+    size = [1, 20, 30]
      #traslazione tra coppie di buchi (distanza dal centro)
-    tr_cry = [0, 7 * mm, 7 * mm, 0]
+    tr_cry = [0, 10 * mm, 10 * mm, 0]
     rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
     start_cry[0] = +271.25 * mm

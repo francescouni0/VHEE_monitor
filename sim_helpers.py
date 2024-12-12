@@ -61,9 +61,9 @@ def add_collimator_he(sim, head, debug):
     
     
     # parameterised holes
-    size = [1, 27, 43]
+    size = [1, 20, 30]
      #traslazione tra coppie di buchi (distanza dal centro)
-    tr = [0, 7 * mm, 7 * mm, 0]
+    tr = [0, 10 * mm, 10 * mm, 0]
     rot = Rotation.from_euler("y", 90, degrees=True).as_matrix()
     #implementa offset diagonale
     offset = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
