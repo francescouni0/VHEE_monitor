@@ -30,7 +30,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "./output"
-    sim.number_of_threads = 10
+    sim.number_of_threads = 1
 
     sim.progress_bar = True
 
@@ -78,48 +78,48 @@ if __name__ == "__main__":
         "BGO", ["Bi", "Ge", "O"], [4, 3, 12], 7.13 * gcm3
     )
     #CYLINDER
-    #pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
-    #pmmacyl.rmin = 0
-    #pmmacyl.rmax = 10 * cm
-    #pmmacyl.dz = 15 * cm
- #
-    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
-    #pmmacyl.material = "G4_PLEXIGLASS  "
-    #pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
-    
-    #BOX
-    pmmacyl = sim.add_volume("Box", "pmmacyl")
-    pmmacyl.size = [20 * cm, 20 * cm, 30 * cm]
+    pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
+    pmmacyl.rmin = 0
+    pmmacyl.rmax = 6 * cm
+    pmmacyl.dz = 15 * cm
+ 
     pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
     pmmacyl.material = "G4_PLEXIGLASS  "
     pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
     
+    #BOX
+    #pmmacyl = sim.add_volume("Box", "pmmacyl")
+    #pmmacyl.size = [20 * cm, 20 * cm, 30 * cm]
+    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+    #pmmacyl.material = "G4_PLEXIGLASS  "
+    #pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
     
     
-    colli=add_collimator_he(sim, world, False)
+    
+    #colli=add_collimator_he(sim, world, False)
 
 
-    sim.add_parallel_world("parallel_world")
+    #sim.add_parallel_world("parallel_world")
     # create detector
-    crystal = sim.add_volume("Box", "crystal")
-    crystal.size = [3 * mm, 3* mm, 2.5 * mm]
-    crystal.material = "BGO"
-    crystal.mother = "parallel_world"
-    crystal.translation = [-200*mm, 0, 0]
-
-    crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
-    
-        # parameterised crystals
-    size = [1, 20, 30]
-     #traslazione tra coppie di buchi (distanza dal centro)
-    tr_cry = [0, 10 * mm, 10 * mm, 0]
-    rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
-    start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
-    start_cry[0] = +271.25 * mm
-
-    #implementa offset diagonale
-    offset_cry = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
-    repeat_colli_hole(sim, crystal, size, tr_cry, rot_cry,start_cry, offset_cry)
+    #crystal = sim.add_volume("Box", "crystal")
+    #crystal.size = [3 * mm, 3* mm, 2.5 * mm]
+    #crystal.material = "BGO"
+    #crystal.mother = "parallel_world"
+    #crystal.translation = [-200*mm, 0, 0]
+#
+    #crystal.color = [0, 1, 0, 1]  # this is RGBa (a=alpha=opacity), so green here
+    #
+    #    # parameterised crystals
+    #size = [1, 20, 30]
+    # #traslazione tra coppie di buchi (distanza dal centro)
+    #tr_cry = [0, 10 * mm, 10 * mm, 0]
+    #rot_cry = Rotation.from_euler("y", 90, degrees=True).as_matrix()
+    #start_cry = [-(x - 1) * y / 2.0 for x, y in zip(size, tr_cry)]
+    #start_cry[0] = +271.25 * mm
+#
+    ##implementa offset diagonale
+    #offset_cry = [0, -1.5*2 * mm * 2, -2.598076212*2 * mm * 2, 0]
+    #repeat_colli_hole(sim, crystal, size, tr_cry, rot_cry,start_cry, offset_cry)
 
     
 
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     sim.physics_manager.set_production_cut("pmmacyl", "electron", 5 * mm)
     sim.physics_manager.set_production_cut("pmmacyl", "positron", 10 * mm)
     sim.physics_manager.set_production_cut("pmmacyl", "proton", 10 * mm)
-    sim.physics_manager.set_production_cut("world_he_collimator", "gamma", 0.02* mm)
+    #sim.physics_manager.set_production_cut("world_he_collimator", "gamma", 0.02* mm)
 
 
    
@@ -161,13 +161,13 @@ if __name__ == "__main__":
     """
     source = sim.add_source("GenericSource", "mysource")
     source.particle = "e-"
-    source.energy.mono = 150 * MeV
+    source.energy.mono = 80 * MeV
     source.position.type = "disc"
     source.position.radius = 2 * mm
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 100000000
+    source.n = 100000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
@@ -190,13 +190,13 @@ if __name__ == "__main__":
     # dose actor 1: depth edep
     
     #if source.n >=99999:
-    #    depth_dose = sim.add_actor("DoseActor", "dose")
-    #    depth_dose.attached_to = "pmmacyl"
-    #    depth_dose.output_filename = "dose3d.mhd"
-    #    depth_dose.spacing = [1 * mm, 1 * mm, 1 * mm]
-    #    depth_dose.size = [120, 120, 300]
-    #    depth_dose.dose.active = True
-    #    depth_dose.dose_uncertainty.active = True
+    depth_dose = sim.add_actor("DoseActor", "dose")
+    depth_dose.attached_to = "pmmacyl"
+    depth_dose.output_filename = "dose3d.mhd"
+    depth_dose.spacing = [120 * mm, 120 * mm, 1 * mm]
+    depth_dose.size = [1, 1, 300]
+    depth_dose.dose.active = True
+    depth_dose.dose_uncertainty.active = True
     #    
 #
     #
@@ -211,38 +211,38 @@ if __name__ == "__main__":
         
 
         
-    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
-    hc.attached_to = crystal.name
-    hc.output_filename = "spect_data.root"
-    hc.attributes = [
-        "PostPosition",
-        "PreKineticEnergy",
-        "TotalEnergyDeposit",
-        "PreDirection",
-        'PreStepUniqueVolumeID',
-        'GlobalTime']
-    
-    sc = sim.add_actor("DigitizerAdderActor", "Singles")
-    sc.output_filename = 'spect_hits.root'
-    sc.input_digi_collection = "Hits_crystal"
-    sc.policy = "EnergyWeightedCentroidPosition"
-    # sc.policy = "EnergyWinnerPosition"
-    sc.group_volume = crystal.name
+    #hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    #hc.attached_to = crystal.name
+    #hc.output_filename = "spect_data.root"
+    #hc.attributes = [
+    #    "PostPosition",
+    #    "PreKineticEnergy",
+    #    "TotalEnergyDeposit",
+    #    "PreDirection",
+    #    'PreStepUniqueVolumeID',
+    #    'GlobalTime']
+    #
+    #sc = sim.add_actor("DigitizerAdderActor", "Singles")
+    #sc.output_filename = 'spect_hits.root'
+    #sc.input_digi_collection = "Hits_crystal"
+    #sc.policy = "EnergyWeightedCentroidPosition"
+    ## sc.policy = "EnergyWinnerPosition"
+    #sc.group_volume = crystal.name
         
-    #ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
-    #ps.output_filename = "phase_space.root"
-    #ps.attached_to = "pmmacyl"
-    #ps.steps_to_store = " exiting "
-    #ps.attributes = [
-    #"KineticEnergy",
-    #"PostPosition",
-    #"PrePosition",
-    #"PreDirection",
-    #"EventPosition",
-    #]
-    #f = sim.add_filter("ParticleFilter", "f")
-    #f.particle = "gamma"
-    #ps.filters.append(f)
+    ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
+    ps.output_filename = "phase_space.root"
+    ps.attached_to = "pmmacyl"
+    ps.steps_to_store = " exiting "
+    ps.attributes = [
+    "KineticEnergy",
+    "PostPosition",
+    "PrePosition",
+    "PreDirection",
+    "EventPosition",
+    ]
+    f = sim.add_filter("ParticleFilter", "f")
+    f.particle = "gamma"
+    ps.filters.append(f)
     
         
 
