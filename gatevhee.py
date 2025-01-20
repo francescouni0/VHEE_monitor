@@ -163,11 +163,11 @@ if __name__ == "__main__":
     source.particle = "e-"
     source.energy.mono = 80 * MeV
     source.position.type = "disc"
-    source.position.radius = 2 * mm
+    source.position.radius = 4 * mm
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 100000
+    source.n = 1000000
 
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
