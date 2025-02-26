@@ -31,7 +31,7 @@ if __name__ == "__main__":
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
-    sim.output_dir = "/media/francesco/HP P500/francesco/traindataset"
+    sim.output_dir = "/home/francesco/gate/VHEE_monitor/output"
     sim.number_of_threads = 1
 
     sim.progress_bar = True
@@ -90,19 +90,19 @@ if __name__ == "__main__":
     
     #INSERT
 
-    #insert = sim.add_volume("TubsVolume", "pmmacyl_insert")
-    #insert.mother = "pmmacyl"
-    #insert.rmin = 0
-    #insert.rmax = 6 * cm
-    #insert.dz = 5 * cm
+    insert = sim.add_volume("TubsVolume", "pmmacyl_insert")
+    insert.mother = "pmmacyl"
+    insert.rmin = 0
+    insert.rmax = 6 * cm
+    insert.dz = 1.5 * cm
 #
     ## Place insert at random Z within cylinder
     #half_dz = (pmmacyl.dz - insert.dz) / 2
     #random_z = random.uniform(-half_dz, half_dz)
-    #insert.translation = [0, 0, random_z]
+    insert.translation = [0, 0, 35*mm]
 #
-    #insert.material = "G4_BONE_CORTICAL_ICRP"  #"G4_LUNG_ICRP"
-    #insert.color = [1, 0, 0, 1]
+    insert.material = "G4_AIR"  #"G4_LUNG_ICRP"
+    insert.color = [1, 0, 0, 1]
     
     #BOX
     #pmmacyl = sim.add_volume("Box", "pmmacyl")
@@ -211,13 +211,13 @@ if __name__ == "__main__":
     # dose actor 1: depth edep
     
     #if source.n >=99999:
-    depth_dose = sim.add_actor("DoseActor", "dose")
-    depth_dose.attached_to = "pmmacyl"
-    depth_dose.output_filename = f"dose3d_{args.energy}.mhd"
-    depth_dose.spacing = [120 * mm, 120 * mm, 1 * mm]
-    depth_dose.size = [1, 1, 300]
-    depth_dose.dose.active = True
-    depth_dose.dose_uncertainty.active = True
+    #depth_dose = sim.add_actor("DoseActor", "dose")
+    #depth_dose.attached_to = "pmmacyl"
+    #depth_dose.output_filename = f"dose3d_{args.energy}.mhd"
+    #depth_dose.spacing = [120 * mm, 120 * mm, 1 * mm]
+    #depth_dose.size = [1, 1, 300]
+    #depth_dose.dose.active = True
+    #depth_dose.dose_uncertainty.active = True
     #    
 #
     #
