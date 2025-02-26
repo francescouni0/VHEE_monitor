@@ -82,7 +82,7 @@ if __name__ == "__main__":
     #CYLINDER
     pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
     pmmacyl.rmin = 0
-    pmmacyl.rmax = 6 * cm
+    pmmacyl.rmax = 12 * cm
     pmmacyl.dz = 15 * cm
     pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
     pmmacyl.material = "G4_PLEXIGLASS  "
@@ -90,19 +90,19 @@ if __name__ == "__main__":
     
     #INSERT
 
-    insert = sim.add_volume("TubsVolume", "pmmacyl_insert")
-    insert.mother = "pmmacyl"
-    insert.rmin = 0
-    insert.rmax = 6 * cm
-    insert.dz = 1.5 * cm
-#
-    ## Place insert at random Z within cylinder
-    #half_dz = (pmmacyl.dz - insert.dz) / 2
-    #random_z = random.uniform(-half_dz, half_dz)
-    insert.translation = [0, 0, 35*mm]
-#
-    insert.material = "G4_AIR"  #"G4_LUNG_ICRP"
-    insert.color = [1, 0, 0, 1]
+    #insert = sim.add_volume("TubsVolume", "pmmacyl_insert")
+    #insert.mother = "pmmacyl"
+    #insert.rmin = 0
+    #insert.rmax = 6 * cm
+    #insert.dz = 0 * cm
+##
+    ### Place insert at random Z within cylinder
+    ##half_dz = (pmmacyl.dz - insert.dz) / 2
+    ##random_z = random.uniform(-half_dz, half_dz)
+    #insert.translation = [0, 0, 35*mm]
+##
+    #insert.material = "G4_AIR"  #"G4_LUNG_ICRP"
+    #insert.color = [1, 0, 0, 1]
     
     #BOX
     #pmmacyl = sim.add_volume("Box", "pmmacyl")
@@ -156,7 +156,7 @@ if __name__ == "__main__":
     """
     The physic list and production cuts
     """
-    sim.physics_manager.physics_list_name = "G4EmStandardPhysics_option1"
+    sim.physics_manager.physics_list_name =  "QGSP_BERT_HP_EM0"       #"G4EmStandardPhysics_option1"
     sim.physics_manager.set_production_cut("world", "gamma", 1 * mm)
     sim.physics_manager.set_production_cut("world", "electron", 1 * mm)
     sim.physics_manager.set_production_cut("world", "positron", 1 * mm)
@@ -188,8 +188,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 1000000
-
+    source.n = 10000
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
     This simple scorer stores the number or Run/Events/Track/Steps of the simulation.
@@ -250,20 +249,45 @@ if __name__ == "__main__":
     ## sc.policy = "EnergyWinnerPosition"
     #sc.group_volume = crystal.name
         
-    ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
-    ps.output_filename = f"phase_space{args.energy}.root"
-    ps.attached_to = "pmmacyl"
-    ps.steps_to_store = " exiting "
-    ps.attributes = [
-    "KineticEnergy",
-    "PostPosition",
-    "PrePosition",
-    "PreDirection",
-    "EventPosition",
-    ]
-    f = sim.add_filter("ParticleFilter", "f")
-    f.particle = "gamma"
-    ps.filters.append(f)
+    #ps= sim.add_actor("PhaseSpaceActor", "PhaseSpace")
+    #ps.output_filename = f"phase_space{args.energy}.root"
+    #ps.attached_to = "pmmacyl"
+    #ps.steps_to_store = " exiting "
+    #ps.attributes = [
+    #"KineticEnergy",
+    #"PostPosition",
+    #"PrePosition",
+    #"PreDirection",
+    #"EventPosition",
+    #]
+    #f = sim.add_filter("ParticleFilter", "f")
+    #f.particle = "gamma"
+    #ps.filters.append(f)
+    
+    
+    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
+    hc.attached_to = crystal.name
+    hc.output_filename = "spect_data.root"
+    hc.attributes = [
+        "PostPosition",
+        "PreKineticEnergy",
+        "TotalEnergyDeposit",
+        "PreDirection",
+        'PreStepUniqueVolumeID',
+        'GlobalTime']
+    
+    
+    c11 = sim.add_actor("DigitizerAdderActor", "HitsC11")
+    c11.attached_to = pmmacyl
+    
+    c11.output_filename = "C11.root"
+    c11.attributes = [
+        "PostPosition"]
+    c11.policy = "EnergyWinnerPosition"
+    fil=sim.add_filter("ParticleFilter", "f")
+    fil.particle = "e+"
+    c11.filters.append(fil)
+    
     
         
 
