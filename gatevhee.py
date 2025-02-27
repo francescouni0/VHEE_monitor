@@ -31,7 +31,7 @@ if __name__ == "__main__":
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
-    sim.output_dir = "/home/francesco/gate/VHEE_monitor/output"
+    sim.output_dir = "output"
     sim.number_of_threads = 10
 
     sim.progress_bar = True
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 100000000
+    source.n = 10000000
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
     This simple scorer stores the number or Run/Events/Track/Steps of the simulation.
