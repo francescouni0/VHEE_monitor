@@ -32,7 +32,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "/home/francesco/gate/VHEE_monitor/output"
-    sim.number_of_threads = 1
+    sim.number_of_threads = 10
 
     sim.progress_bar = True
 
@@ -188,7 +188,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 10000
+    source.n = 100000000
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
     This simple scorer stores the number or Run/Events/Track/Steps of the simulation.
@@ -264,30 +264,27 @@ if __name__ == "__main__":
     #f.particle = "gamma"
     #ps.filters.append(f)
     
-    
-    hc = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{crystal.name}")
-    hc.attached_to = crystal.name
-    hc.output_filename = "spect_data.root"
-    hc.attributes = [
+    hcc11 = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{pmmacyl.name}")
+    hcc11.attached_to = pmmacyl.name
+    hcc11.output_filename = "c11data.root"
+    hcc11.attributes = [
         "PostPosition",
         "PreKineticEnergy",
         "TotalEnergyDeposit",
         "PreDirection",
         'PreStepUniqueVolumeID',
         'GlobalTime']
+    filc11= sim.add_filter("ParticleFilter", "filc11")
+    filc11.particle = "C11"
+    hcc11.filters.append(filc11)
     
-    
-    c11 = sim.add_actor("DigitizerAdderActor", "HitsC11")
-    c11.attached_to = pmmacyl
-    
-    c11.output_filename = "C11.root"
-    c11.attributes = [
-        "PostPosition"]
-    c11.policy = "EnergyWinnerPosition"
-    fil=sim.add_filter("ParticleFilter", "f")
-    fil.particle = "e+"
-    c11.filters.append(fil)
-    
+    scc11 = sim.add_actor("DigitizerAdderActor", "Singles")
+    scc11.output_filename = 'c11hits.root'
+    scc11.input_digi_collection = "Hits_pmmacyl"
+    scc11.policy = "EnergyWeightedCentroidPosition"
+    scc11.policy = "EnergyWinnerPosition"
+    scc11.group_volume = pmmacyl.name
+
     
         
 
