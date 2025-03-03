@@ -266,7 +266,7 @@ if __name__ == "__main__":
     
     hcc11 = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{pmmacyl.name}")
     hcc11.attached_to = pmmacyl.name
-    hcc11.output_filename = "c11data.root"
+    hcc11.output_filename = "o15data.root"
     hcc11.attributes = [
         "PostPosition",
         "PreKineticEnergy",
@@ -275,11 +275,11 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     filc11= sim.add_filter("ParticleFilter", "filc11")
-    filc11.particle = "C11"
+    filc11.particle = "O15"
     hcc11.filters.append(filc11)
     
     scc11 = sim.add_actor("DigitizerAdderActor", "Singles")
-    scc11.output_filename = 'c11hits.root'
+    scc11.output_filename = 'o15hits.root'
     scc11.input_digi_collection = "Hits_pmmacyl"
     scc11.policy = "EnergyWeightedCentroidPosition"
     scc11.policy = "EnergyWinnerPosition"
