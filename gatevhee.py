@@ -26,13 +26,13 @@ if __name__ == "__main__":
     sim.running_verbose_level = gate.logger.RUN
     sim.g4_verbose = False
     sim.g4_verbose_level = 1
-    sim.visu = False
+    sim.visu = True
     sim.visu_type = "vrml_file_only"
     sim.visu_filename="gate_visu.wrl"
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "output"
-    sim.number_of_threads = 10
+    sim.number_of_threads = 20
 
     sim.progress_bar = True
 
@@ -76,17 +76,18 @@ if __name__ == "__main__":
     sim.volume_manager.material_database.add_material_nb_atoms(
         "Lead", ["Pb"], [1], 11.4 * gcm3
     )
+    
     sim.volume_manager.material_database.add_material_nb_atoms(
         "BGO", ["Bi", "Ge", "O"], [4, 3, 12], 7.13 * gcm3
     )
     #CYLINDER
-    pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
-    pmmacyl.rmin = 0
-    pmmacyl.rmax = 12 * cm
-    pmmacyl.dz = 15 * cm
-    pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
-    pmmacyl.material = "G4_PLEXIGLASS  "
-    pmmacyl.color = [-5, 0, 1, 1]
+    #pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
+    #pmmacyl.rmin = 0
+    #pmmacyl.rmax = 12 * cm
+    #pmmacyl.dz = 15 * cm
+    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+    #pmmacyl.material = "G4_PLEXIGLASS  "
+    #pmmacyl.color = [-5, 0, 1, 1]
     
     #INSERT
 
@@ -105,11 +106,22 @@ if __name__ == "__main__":
     #insert.color = [1, 0, 0, 1]
     
     #BOX
-    #pmmacyl = sim.add_volume("Box", "pmmacyl")
-    #pmmacyl.size = [20 * cm, 20 * cm, 30 * cm]
-    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
-    #pmmacyl.material = "G4_PLEXIGLASS  "
-    #pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
+    pmmacyl = sim.add_volume("Box", "pmmacyl")
+    pmmacyl.size = [3 * cm, 3 * cm, 5 * cm]
+    pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+    pmmacyl.material = "G4_PLEXIGLASS  "
+    pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
+    
+    #INSERT
+    tung= sim.add_volume("Box", "tung")
+    tung.mother = "pmmacyl"
+    tung.size = [3 * cm, 3 * cm, 0.8 * cm]
+    tung.translation = [0 * cm, 0 * cm, -3.1 * cm]
+    tung.material = "G4_W"
+    tung.color = [1, 0, 0, 1]  # this is RGBa (a=alpha=opacity), so red here
+    
+    
+    
     
     
     
@@ -179,12 +191,14 @@ if __name__ == "__main__":
     source = sim.add_source("GenericSource", "mysource")
     source.particle = "e-"
     parser = argparse.ArgumentParser()
-    parser.add_argument('--energy', type=float, default=150, help='Energy in MeV')
+    parser.add_argument('--energy', type=float, default=120, help='Energy in MeV')
     args = parser.parse_args()
 
+    source.energy.type = "gauss"
     source.energy.mono = args.energy * MeV
+    source.energy.sigma_gauss = 10 * MeV    
     source.position.type = "disc"
-    source.position.radius = 4 * mm
+    source.position.radius = 10 * mm
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
@@ -266,7 +280,7 @@ if __name__ == "__main__":
     
     hcc11 = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{pmmacyl.name}")
     hcc11.attached_to = pmmacyl.name
-    hcc11.output_filename = "o15data.root"
+    hcc11.output_filename = "c11data.root"
     hcc11.attributes = [
         "PostPosition",
         "PreKineticEnergy",
@@ -275,11 +289,11 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     filc11= sim.add_filter("ParticleFilter", "filc11")
-    filc11.particle = "O15"
+    filc11.particle = "C11"
     hcc11.filters.append(filc11)
     
     scc11 = sim.add_actor("DigitizerAdderActor", "Singles")
-    scc11.output_filename = 'o15hits.root'
+    scc11.output_filename = 'c11hits.root'
     scc11.input_digi_collection = "Hits_pmmacyl"
     scc11.policy = "EnergyWeightedCentroidPosition"
     scc11.policy = "EnergyWinnerPosition"
