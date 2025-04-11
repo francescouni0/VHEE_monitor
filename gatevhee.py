@@ -32,7 +32,7 @@ if __name__ == "__main__":
     sim.random_engine = "MersenneTwister"
     sim.random_seed = "auto"
     sim.output_dir = "output"
-    sim.number_of_threads = 20
+    sim.number_of_threads = 4
 
     sim.progress_bar = True
 
@@ -81,13 +81,13 @@ if __name__ == "__main__":
         "BGO", ["Bi", "Ge", "O"], [4, 3, 12], 7.13 * gcm3
     )
     #CYLINDER
-    #pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
-    #pmmacyl.rmin = 0
-    #pmmacyl.rmax = 12 * cm
-    #pmmacyl.dz = 15 * cm
-    #pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
-    #pmmacyl.material = "G4_PLEXIGLASS  "
-    #pmmacyl.color = [-5, 0, 1, 1]
+    pmmacyl = sim.add_volume("TubsVolume", "pmmacyl")
+    pmmacyl.rmin = 0
+    pmmacyl.rmax = 12 * cm
+    pmmacyl.dz = 15 * cm
+    pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+    pmmacyl.material = "G4_PLEXIGLASS  "
+    pmmacyl.color = [-5, 0, 1, 1]
     
     #INSERT
 
@@ -106,19 +106,19 @@ if __name__ == "__main__":
     #insert.color = [1, 0, 0, 1]
     
     #BOX
-    pmmacyl = sim.add_volume("Box", "pmmacyl")
-    pmmacyl.size = [3 * cm, 3 * cm, 5 * cm]
-    pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
-    pmmacyl.material = "G4_PLEXIGLASS  "
-    pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
-    
-    #INSERT
-    tung= sim.add_volume("Box", "tung")
-    tung.mother = "pmmacyl"
-    tung.size = [3 * cm, 3 * cm, 0.8 * cm]
-    tung.translation = [0 * cm, 0 * cm, -3.1 * cm]
-    tung.material = "G4_W"
-    tung.color = [1, 0, 0, 1]  # this is RGBa (a=alpha=opacity), so red here
+#    pmmacyl = sim.add_volume("Box", "pmmacyl")
+#    pmmacyl.size = [3 * cm, 3 * cm, 5 * cm]
+#    pmmacyl.translation = [0 * cm, 0 * cm, 0 * cm]
+#    pmmacyl.material = "G4_PLEXIGLASS  "
+#    pmmacyl.color = [-5, 0, 1, 1]  # this is RGBa (a=alpha=opacity), so blue here
+#    
+#    #INSERT
+#    tung= sim.add_volume("Box", "tung")
+#    tung.mother = "pmmacyl"
+#    tung.size = [3 * cm, 3 * cm, 0.8 * cm]
+#    tung.translation = [0 * cm, 0 * cm, -3.1 * cm]
+#    tung.material = "G4_W"
+#    tung.color = [1, 0, 0, 1]  # this is RGBa (a=alpha=opacity), so red here
     
     
     
@@ -202,7 +202,7 @@ if __name__ == "__main__":
     source.position.translation = [0, 0, -50 * cm]
     source.direction.type = "momentum"
     source.direction.momentum = [0, 0, 1]
-    source.n = 10000000
+    source.n = 250000
     """
     Add a single scorer (called 'actor'), of type 'SimulationStatisticsActor'.
     This simple scorer stores the number or Run/Events/Track/Steps of the simulation.
@@ -223,25 +223,25 @@ if __name__ == "__main__":
       # dose actor 1: depth edep
     # dose actor 1: depth edep
     
-    #if source.n >=99999:
-    #depth_dose = sim.add_actor("DoseActor", "dose")
-    #depth_dose.attached_to = "pmmacyl"
-    #depth_dose.output_filename = f"dose3d_{args.energy}.mhd"
-    #depth_dose.spacing = [120 * mm, 120 * mm, 1 * mm]
-    #depth_dose.size = [1, 1, 300]
-    #depth_dose.dose.active = True
-    #depth_dose.dose_uncertainty.active = True
-    #    
-#
-    #
-    #
-    #    # dose actor 2: edep profile
-    #    lateral_edep = sim.add_actor("DoseActor", "lateral_edep")
-    #    lateral_edep.attached_to = "pmmacyl"
-    #    lateral_edep.output_filename = "doselat.mhd"
-    #    lateral_edep.spacing = [0.5 * mm, 40 * cm, 40 * cm]
-    #    lateral_edep.size = [100, 1, 1]
-    #    lateral_edep.edep_uncertainty.active = True
+    if source.n >=99999:
+        depth_dose = sim.add_actor("DoseActor", "dose")
+        depth_dose.attached_to = "pmmacyl"
+        depth_dose.output_filename = f"dose3d_{args.energy}.mhd"
+        depth_dose.spacing = [5 * mm, 5 * mm, 5 * mm]
+        depth_dose.size = [24, 24, 240]
+        depth_dose.dose.active = True
+        depth_dose.dose_uncertainty.active = True
+        
+
+    
+    
+        ## dose actor 2: edep profile
+        #lateral_edep = sim.add_actor("DoseActor", "lateral_edep")
+        #lateral_edep.attached_to = "pmmacyl"
+        #lateral_edep.output_filename = "doselat.mhd"
+        #lateral_edep.spacing = [0.5 * mm, 40 * cm, 40 * cm]
+        #lateral_edep.size = [100, 1, 1]
+        #lateral_edep.edep_uncertainty.active = True
         
 
         
@@ -280,7 +280,7 @@ if __name__ == "__main__":
     
     hcc11 = sim.add_actor("DigitizerHitsCollectionActor", f"Hits_{pmmacyl.name}")
     hcc11.attached_to = pmmacyl.name
-    hcc11.output_filename = "c11data.root"
+    hcc11.output_filename = "photondata.root"
     hcc11.attributes = [
         "PostPosition",
         "PreKineticEnergy",
@@ -289,11 +289,11 @@ if __name__ == "__main__":
         'PreStepUniqueVolumeID',
         'GlobalTime']
     filc11= sim.add_filter("ParticleFilter", "filc11")
-    filc11.particle = "C11"
+    filc11.particle = "gamma"
     hcc11.filters.append(filc11)
     
     scc11 = sim.add_actor("DigitizerAdderActor", "Singles")
-    scc11.output_filename = 'c11hits.root'
+    scc11.output_filename = 'photonhits.root'
     scc11.input_digi_collection = "Hits_pmmacyl"
     scc11.policy = "EnergyWeightedCentroidPosition"
     scc11.policy = "EnergyWinnerPosition"
